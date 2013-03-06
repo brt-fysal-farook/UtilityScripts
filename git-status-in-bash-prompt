@@ -16,10 +16,7 @@ function parse_git_branch () {
 
 function determine_webkit_trunk_revision() {    
     currentDir=$(pwd);
-    if [[ "$currentDir" =~ .*webkit.* ]]
-        then
-            git log 2> /dev/null | grep git-svn-id -m 1 | awk -F '@' '{print $2}' | awk '{print "@"$1}'
-    fi
+    git log -n1 2> /dev/null | grep git-svn-id -m 1 | awk -F '@' '{print $2}' | awk '{print "@"$1}'
 }
 
 PS1="$GREEN\u@\h$NO_COLOUR:\w $YELLOW\$(parse_git_branch)$GREEN\$(determine_webkit_trunk_revision)$NO_COLOUR\$ "
