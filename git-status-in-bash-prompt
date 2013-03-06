@@ -5,7 +5,7 @@ NO_COLOUR="\[\033[0m\]"
 
 function parse_git_branch () {
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
-    if [ "$branch" = "(master)" ];
+    if [ "$branch" = "(master)" -o "$branch" = "(trunk)" ];
         then
         tput setb 4
         tput smul
