@@ -15,7 +15,6 @@ function parse_git_branch () {
 }
 
 function determine_webkit_trunk_revision() {    
-    currentDir=$(pwd);
     git log -n1 2> /dev/null | grep git-svn-id -m 1 | awk -F '@' '{print $2}' | awk '{print "@"$1}'
 }
 
