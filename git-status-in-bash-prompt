@@ -1,8 +1,12 @@
-RED="\[\033[0;31m\]"
-YELLOW="\[\033[0;33m\]"
+BGREEN="\[\033[1;32m\]"
 GREEN="\[\033[0;32m\]"
 NO_COLOUR="\[\033[0m\]"
-BGREEN='\[\033[1;32m\]'
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+
+function determine_webkit_trunk_revision() {    
+    git log -n1 2> /dev/null | grep git-svn-id -m 1 | awk -F '@' '{print $2}' | awk '{print "@"$1}'
+}
 
 function parse_git_branch () {
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
@@ -13,10 +17,6 @@ function parse_git_branch () {
         tput bold
     fi
     echo $branch
-}
-
-function determine_webkit_trunk_revision() {    
-    git log -n1 2> /dev/null | grep git-svn-id -m 1 | awk -F '@' '{print $2}' | awk '{print "@"$1}'
 }
 
 PS1="$GREEN\u@\h$YELLOW:\w $BGREEN\$(parse_git_branch)$GREEN\$(determine_webkit_trunk_revision)$NO_COLOUR\n\$ "
