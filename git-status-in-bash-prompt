@@ -10,6 +10,11 @@ function determine_webkit_trunk_revision() {
 
 function parse_git_branch () {
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
+    if [[ $branch == \(cl* ]];
+        then
+        reviewId=`echo ${branch:3:8}`
+        echo -n "https://codereview.chromium.org/$reviewId "
+    fi
     if [ "$branch" = "(master)" -o "$branch" = "(trunk)" ];
         then
         tput setb 4
