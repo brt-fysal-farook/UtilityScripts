@@ -13,7 +13,7 @@ function parse_git_branch () {
     if [[ $branch == \(cl* ]];
         then
         reviewId=`echo ${branch:3:8}`
-        echo -n "https://codereview.chromium.org/$reviewId "
+        echo -n "http://crrev.com/$reviewId "
     fi
     if [ "$branch" = "(master)" -o "$branch" = "(trunk)" ];
         then
