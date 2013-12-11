@@ -27,7 +27,9 @@ function parse_git_branch () {
 function is_building_for_android() {
     if [ "$ANDROID_SDK_BUILD" = "1" ]; then
         tput setab 2
-        echo "Android Build";
+        case $PWD/ in
+            $CHROME_SRC/*) echo "Android Build";
+        esac
     fi
 }
 
