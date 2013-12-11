@@ -24,4 +24,12 @@ function parse_git_branch () {
     echo $branch
 }
 
-PS1="$GREEN\u@\h$YELLOW:\w $BGREEN\$(parse_git_branch)$GREEN\$(determine_webkit_trunk_revision)$NO_COLOUR\n\$ "
+function is_building_for_android() {
+    if [ "$ANDROID_SDK_BUILD" = "1" ]; then
+        tput setab 2
+        echo "Android Build";
+    fi
+}
+
+#PS1="$GREEN\u@\h$YELLOW:\w $BGREEN\$(parse_git_branch)$GREEN\$(determine_webkit_trunk_revision)$NO_COLOUR\n\$ "
+PS1="$GREEN\u@\h: $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(is_building_for_android)$NO_COLOUR\n\$ "
