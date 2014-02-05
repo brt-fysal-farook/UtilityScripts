@@ -26,7 +26,7 @@ function parse_git_branch () {
 
 function is_building_for_android() {
     if [ "$ANDROID_SDK_BUILD" = "1" ]; then
-        if [[ $PWD = $CHROME_SRC ]]
+        if [[ $PWD =~ ^$CHROME_SRC.* ]]
         then 
             tput setab 2; echo "AB";
         else
@@ -34,6 +34,7 @@ function is_building_for_android() {
         fi
     fi
 }
+
 
 
 #PS1="$GREEN\u@\h$YELLOW:\w $BGREEN\$(parse_git_branch)$GREEN\$(determine_webkit_trunk_revision)$NO_COLOUR\n\$ "
