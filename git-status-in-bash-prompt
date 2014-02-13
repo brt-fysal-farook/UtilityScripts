@@ -30,7 +30,7 @@ function is_building_for_android() {
         then 
             tput setab 2; echo "AB";
         else
-            tput setab 2; echo "AB !pwd";
+            tput setab 3; echo "AB !pwd";
         fi
     fi
 }
