@@ -25,7 +25,7 @@ function parse_git_branch () {
 }
 
 function is_building_for_android() {
-    if [ "$ANDROID_SDK_BUILD" = "1" ]; then
+    if [[ "$GYP_DEFINES" =~ "OS=android" ]]; then
         if [[ $PWD =~ ^$CHROME_SRC.* ]]
         then 
             tput setab 2; echo "AB";
