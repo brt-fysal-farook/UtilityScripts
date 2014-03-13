@@ -25,14 +25,22 @@ function parse_git_branch () {
 }
 
 function is_building_for_android() {
+    terminal_status_bubble=""
+    status_color="2"
     if [[ "$GYP_DEFINES" =~ "OS=android" ]]; then
         if [[ $PWD =~ ^$CHROME_SRC.* ]]
         then 
-            tput setab 2; echo "AB";
+            status_color=2
+            terminal_status_bubble="[AB]"
         else
-            tput setab 3; echo "AB !pwd";
+            status_color=3
+            terminal_status_bubble="[AB !pwd]"
         fi
     fi
+    if [[ "$GYP_DEFINES" =~ "fastbuild=2" ]]; then
+        terminal_status_bubble="$terminal_status_bubble [FB@2]"
+    fi
+    tput setab $status_color; echo "$terminal_status_bubble";
 }
 
 
