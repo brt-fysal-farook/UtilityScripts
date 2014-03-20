@@ -4,10 +4,6 @@ NO_COLOUR="\[\033[0m\]"
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 
-function determine_webkit_trunk_revision() {    
-    git log -n1 2> /dev/null | grep git-svn-id -m 1 | awk -F '@' '{print $2}' | awk '{print "@"$1}'
-}
-
 function parse_git_branch () {
     branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
     if [[ $branch == \(cl* ]];
@@ -46,7 +42,4 @@ function show_status_bubble() {
     tput setab $status_color; echo "$terminal_status_bubble";
 }
 
-
-
-#PS1="$GREEN\u@\h$YELLOW:\w $BGREEN\$(parse_git_branch)$GREEN\$(determine_webkit_trunk_revision)$NO_COLOUR\n\$ "
 PS1="$GREEN\u@\h: $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$NO_COLOUR\n\$ "
