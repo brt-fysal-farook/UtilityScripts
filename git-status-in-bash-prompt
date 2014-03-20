@@ -24,7 +24,7 @@ function parse_git_branch () {
     echo $branch
 }
 
-function is_building_for_android() {
+function show_status_bubble() {
     terminal_status_bubble=""
     status_color="2"
     if [[ "$GYP_DEFINES" =~ "OS=android" ]]; then
@@ -49,4 +49,4 @@ function is_building_for_android() {
 
 
 #PS1="$GREEN\u@\h$YELLOW:\w $BGREEN\$(parse_git_branch)$GREEN\$(determine_webkit_trunk_revision)$NO_COLOUR\n\$ "
-PS1="$GREEN\u@\h: $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(is_building_for_android)$NO_COLOUR\n\$ "
+PS1="$GREEN\u@\h: $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$NO_COLOUR\n\$ "
