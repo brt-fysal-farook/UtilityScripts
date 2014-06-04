@@ -42,4 +42,4 @@ function show_status_bubble() {
     tput setab $status_color; echo "$terminal_status_bubble";
 }
 
-PS1="$GREEN\u@\h: $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$GREEN \$(date +\"%d:%m:%Y %T.%3N\")$NO_COLOUR\n\$ "
+PS1="$GREEN\u@\h: $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$GREEN \$(date +\"%d:%m:%y %T.%3N\")$NO_COLOUR\n\$ "
