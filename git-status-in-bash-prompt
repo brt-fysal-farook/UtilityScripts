@@ -36,8 +36,11 @@ function show_status_bubble() {
     if [[ "$GYP_DEFINES" =~ "fastbuild=2" ]]; then
         terminal_status_bubble="$terminal_status_bubble [FB@2]"
     fi
-    if [[ "$GYP_DEFINES" =~ "clang=1" ]]; then
+    if [[ "$GYP_DEFINES" =~ "clang=1" ]]
+    then
         terminal_status_bubble="$terminal_status_bubble [clang]"
+    else
+        terminal_status_bubble="$terminal_status_bubble [no-clang]"
     fi
     tput setab $status_color; echo "$terminal_status_bubble";
 }
