@@ -22,27 +22,39 @@ function parse_git_branch () {
 
 function show_status_bubble() {
     terminal_status_bubble=""
-    status_color="2"
-    if [[ "$GYP_DEFINES" =~ "OS=android" ]]; then
+    if [[ "$GYP_DEFINES" =~ "OS=android" ]]
+    then
         if [[ $PWD =~ ^$CHROME_SRC.* ]]
-        then 
-            status_color=2
-            terminal_status_bubble="[AB]"
-        else
-            status_color=3
-            terminal_status_bubble="[AB !pwd]"
+        then
+            terminal_status_bubble="android"
         fi
+    else
+        terminal_status_bubble="linux"
     fi
     if [[ "$GYP_DEFINES" =~ "fastbuild=2" ]]; then
-        terminal_status_bubble="$terminal_status_bubble [FB@2]"
+        terminal_status_bubble="$terminal_status_bubble fastbuild@2"
     fi
     if [[ "$GYP_DEFINES" =~ "clang=1" ]]
     then
-        terminal_status_bubble="$terminal_status_bubble [clang]"
+        terminal_status_bubble="$terminal_status_bubble clang"
     else
-        terminal_status_bubble="$terminal_status_bubble [no-clang]"
+        terminal_status_bubble="$terminal_status_bubble gcc"
     fi
-    tput setab $status_color; echo "$terminal_status_bubble";
+    array=(${terminal_status_bubble})
+    length=${#array[@]}
+    for i in "${!array[@]}"
+    do
+        tput setaf 7
+        tput setab 4
+        echo -n "${array[i]}"
+        tput sgr0
+        if [[ $i == $((length-1)) ]]
+        then
+            echo -n ""
+        else
+            echo -n " "
+        fi
+    done
 }
 
 PS1="$GREEN\u@\h: $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$GREEN \$(date +\"%d:%m:%y %T.%3N\")$NO_COLOUR\n\$ "
