@@ -12,11 +12,12 @@ function parse_git_branch () {
     then
         tput bold
         tput setab 1
-    else
+    elif [[ $branch ]]
+    then
         tput setab 2
         branch="⑆ $branch"
     fi
-    echo $branch
+    echo -n $branch
 }
 
 function show_status_bubble() {
