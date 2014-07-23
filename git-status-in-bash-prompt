@@ -5,17 +5,16 @@ RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 
 function parse_git_branch () {
-    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
-    if [[ $branch == \(cl* ]];
-        then
-        reviewId=`echo ${branch:3:8}`
-        echo -n "http://crrev.com/$reviewId "
-    fi
-    if [ "$branch" = "(master)" -o "$branch" = "(trunk)" ];
-        then
-        tput setb 4
-        tput smul
+    branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    tput sgr0
+    tput setaf 7
+    if [ "$branch" = "master" -o "$branch" = "trunk" ];
+    then
         tput bold
+        tput setab 1
+    else
+        tput setab 2
+        branch="⑆ $branch"
     fi
     echo $branch
 }
