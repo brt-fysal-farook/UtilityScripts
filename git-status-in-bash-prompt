@@ -25,19 +25,11 @@ function show_status_bubble() {
     gyp_variables+=($GYP_DEFINES)
     status_bubble=""
     for element in "${gyp_variables[@]}"
-    do 
+        do 
         keyValuePair=(${element//=/ })
         key=${keyValuePair[0]}; 
         value=${keyValuePair[1]};
         case $key in
-            "OS" )
-                if [[ "$value" = "android" ]]
-                then
-                    status_bubble="$status_bubble android"
-                else
-                    status_bubble="$status_bubble linux"
-                fi;;
-
             "clang" )
                 if [[ $((value)) == 1 ]]
                 then
@@ -46,10 +38,7 @@ function show_status_bubble() {
                     status_bubble="$status_bubble gcc"
                 fi;;
 
-            "component" )
-                status_bubble="$status_bubble $value";;
-
-            "output_dir" )
+            "OS" | "component" | "output_dir" )
                 status_bubble="$status_bubble $value";;
 
             "fastbuild" )
