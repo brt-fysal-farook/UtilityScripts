@@ -25,7 +25,7 @@ function show_status_bubble() {
     gyp_variables+=($GYP_DEFINES)
     status_bubble=""
     for element in "${gyp_variables[@]}"
-        do 
+    do 
         keyValuePair=(${element//=/ })
         key=${keyValuePair[0]}; 
         value=${keyValuePair[1]};
