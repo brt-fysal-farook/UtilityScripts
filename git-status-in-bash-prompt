@@ -23,7 +23,7 @@ function parse_git_branch () {
 function show_status_bubble() {
     gyp_variables=($GYP_GENERATOR_FLAGS)
     gyp_variables+=($GYP_DEFINES)
-    status_bubble=""
+    status_bubble=()
     for element in "${gyp_variables[@]}"
     do 
         keyValuePair=(${element//=/ })
@@ -33,25 +33,24 @@ function show_status_bubble() {
             "clang" )
                 if [[ $((value)) == 1 ]]
                 then
-                    status_bubble="$status_bubble clang"
+                    status_bubble+=("clang")
                 else
-                    status_bubble="$status_bubble gcc"
+                    status_bubble+=("gcc")
                 fi;;
 
             "OS" | "component" | "output_dir" )
-                status_bubble="$status_bubble $value";;
+                status_bubble+=("$value");;
 
             "fastbuild" )
-                status_bubble="$status_bubble fastbuild@$value";;
+                status_bubble+=("fastbuild@$value");;
         esac
     done
-    array=(${status_bubble})
-    length=${#array[@]}
-    for i in "${!array[@]}"
+    length=${#status_bubble[@]}
+    for i in "${!status_bubble[@]}"
     do
         tput setaf 7
         tput setab 4
-        echo -n "${array[i]}"
+        echo -n "${status_bubble[i]}"
         tput sgr0
         if [[ $i == $((length-1)) ]]
         then
