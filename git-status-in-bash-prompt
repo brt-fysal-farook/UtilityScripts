@@ -1,4 +1,3 @@
-BGREEN="\[\033[1;32m\]"
 GREEN="\[\033[0;32m\]"
 NO_COLOUR="\[\033[0m\]"
 RED="\[\033[0;31m\]"
@@ -61,4 +60,4 @@ function show_status_bubble() {
     done
 }
 
-PS1="$GREEN\u $YELLOW\w $BGREEN\$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$GREEN \$(date +\"%d:%m:%y %T.%3N\")$NO_COLOUR\n\$ "
+PS1="$GREEN\u $YELLOW\w \$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$GREEN \$(date +\"%d:%m:%y %T.%3N\")$NO_COLOUR\n\$ "
