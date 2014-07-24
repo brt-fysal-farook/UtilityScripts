@@ -21,26 +21,42 @@ function parse_git_branch () {
 }
 
 function show_status_bubble() {
-    terminal_status_bubble=""
-    if [[ "$GYP_DEFINES" =~ "OS=android" ]]
-    then
-        if [[ $PWD =~ ^$CHROME_SRC.* ]]
-        then
-            terminal_status_bubble="android"
-        fi
-    else
-        terminal_status_bubble="linux"
-    fi
-    if [[ "$GYP_DEFINES" =~ "fastbuild=2" ]]; then
-        terminal_status_bubble="$terminal_status_bubble fastbuild@2"
-    fi
-    if [[ "$GYP_DEFINES" =~ "clang=1" ]]
-    then
-        terminal_status_bubble="$terminal_status_bubble clang"
-    else
-        terminal_status_bubble="$terminal_status_bubble gcc"
-    fi
-    array=(${terminal_status_bubble})
+    gyp_variables=($GYP_GENERATOR_FLAGS)
+    gyp_variables+=($GYP_DEFINES)
+    status_bubble=""
+    for element in "${gyp_variables[@]}"
+    do 
+        keyValuePair=(${element//=/ })
+        key=${keyValuePair[0]}; 
+        value=${keyValuePair[1]};
+        case $key in
+            "OS" )
+                if [[ "$value" = "android" ]]
+                then
+                    status_bubble="$status_bubble android"
+                else
+                    status_bubble="$status_bubble linux"
+                fi;;
+
+            "clang" )
+                if [[ $((value)) == 1 ]]
+                then
+                    status_bubble="$status_bubble clang"
+                else
+                    status_bubble="$status_bubble gcc"
+                fi;;
+
+            "component" )
+                status_bubble="$status_bubble $value";;
+
+            "output_dir" )
+                status_bubble="$status_bubble $value";;
+
+            "fastbuild" )
+                status_bubble="$status_bubble fastbuild@$value";;
+        esac
+    done
+    array=(${status_bubble})
     length=${#array[@]}
     for i in "${!array[@]}"
     do
