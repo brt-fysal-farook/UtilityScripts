@@ -107,15 +107,5 @@ set nobackup
 set tags+=~/workspace/chromium/tags
 set laststatus=2
 
-filetype off 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'wting/rust.vim'
-
-filetype plugin indent on
-
-
-
 
 
