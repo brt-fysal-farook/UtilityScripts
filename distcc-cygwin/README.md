@@ -1,0 +1,1 @@
+## Distcc cygwin setup instructions
