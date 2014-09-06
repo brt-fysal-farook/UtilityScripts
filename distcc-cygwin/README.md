@@ -1,4 +1,4 @@
-## Distcc cygwin setup instructions
+## distcc cygwin setup instructions
 
 #### Install cygwin, cygwinports->distcc
 Follow instructions to install cygwin (for 32-bit) and the cygwin ports from here: http://cygwinports.org/
