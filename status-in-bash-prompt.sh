@@ -59,5 +59,6 @@ function show_status_bubble() {
         fi
     done
 }
+# The below line will intercept every command and set it as the title.
 trap 'echo -ne "\e]0;"; echo -n $BASH_COMMAND; echo -ne "\007"' DEBUG
 PS1="$GREEN\u $YELLOW\w \$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$GREEN \$(date +\"%d:%m:%y %T.%3N\")$NO_COLOUR\n\$ "
