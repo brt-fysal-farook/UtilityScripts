@@ -20,6 +20,7 @@ function parse_git_branch () {
 }
 
 function show_status_bubble() {
+    echo -e '\033]2;'`fc -ln -0`'\007'
     gyp_variables=($GYP_GENERATOR_FLAGS)
     gyp_variables+=($GYP_DEFINES)
     status_bubble=()
