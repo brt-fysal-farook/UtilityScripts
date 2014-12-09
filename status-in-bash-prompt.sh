@@ -20,6 +20,8 @@ function parse_git_branch () {
 }
 
 function show_status_bubble() {
+    # Restore the title here
+    echo -ne '\033]2;'`fc -ln -0`'\007'
     gyp_variables=($GYP_GENERATOR_FLAGS)
     gyp_variables+=($GYP_DEFINES)
     status_bubble=()
@@ -60,5 +62,5 @@ function show_status_bubble() {
     done
 }
 # The below line will intercept every command and set it as the title.
-trap 'echo -ne "\e]0;"; echo -n $BASH_COMMAND; echo -ne "\007"' DEBUG
+trap 'echo -ne "\e]0;"; echo -n ▶ $BASH_COMMAND; echo -ne "\007"' DEBUG
 PS1="$GREEN\u $YELLOW\w \$(parse_git_branch)$NO_COLOUR \$(show_status_bubble)$GREEN \$(date +\"%d:%m:%y %T.%3N\")$NO_COLOUR\n\$ "
