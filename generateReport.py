@@ -85,7 +85,7 @@ authors = [
     { 'name': 'Tanvir Rizvi', 'email': 'tanvir.rizvi at samsung dot com' },
     { 'name': 'Thanikassalam Kankayan', 'email': 'thanik.k at samsung dot com' },
     { 'name': 'Vivek Agrawal', 'email': 'vivek.s14 at samsung dot com' },
-    { 'name': 'Vivek Galatage', 'email': ['vivek.vg at samsung dot com', 'vivekgalatage@gmail.com'] }
+    { 'name': 'Vivek Galatage', 'email': ['vivek.vg at samsung dot com', ''] }
 ]
 
 day = datetime.date.today() - datetime.timedelta(days=7)
