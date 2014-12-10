@@ -1,0 +1,375 @@
+[
+    {
+        "email": "abhijeet.k|sam-----sungOcom", 
+        "name": "Abhijeet Kandalkar"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2014": 1, 
+                "closed": [], 
+                "open": [], 
+                "total": 1
+            }, 
+            "chromium": {
+                "2014": 2, 
+                "closed": [], 
+                "open": [], 
+                "total": 2
+            }
+        }, 
+        "email": "ajay.berwal|sam-----sungOcom", 
+        "name": "Ajay Berwal"
+    }, 
+    {
+        "email": "akhil.td|sam-----sungOcom", 
+        "name": "Akhil Teeka Dhananjaya"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2014": 22, 
+                "closed": [], 
+                "open": [
+                    {
+                        "https://codereview.chromium.org/756583002": "TimeOffset must be considered while adding keyframed animations on compositor"
+                    }, 
+                    {
+                        "https://codereview.chromium.org/763103002": "AnimationNode::updateSpecifiedTiming() should check if timing actually changed"
+                    }
+                ], 
+                "total": 22
+            }, 
+            "chromium": {
+                "2013": 1, 
+                "2014": 6, 
+                "closed": [], 
+                "open": [], 
+                "total": 7
+            }
+        }, 
+        "email": "behara.ms|sam-----sungOcom", 
+        "name": "Behara Mani Shyam Patro"
+    }, 
+    {
+        "contributions": {
+            "chromium": {
+                "2014": 3, 
+                "closed": [], 
+                "open": [], 
+                "total": 3
+            }
+        }, 
+        "email": "kishor.ag|sam-----sungOcom", 
+        "name": "Gandhi Kishor Addanki"
+    }, 
+    {
+        "email": "ganesh.kamat|sam-----sungOcom", 
+        "name": "Ganesh Kamat"
+    }, 
+    {
+        "email": "kaja.m|sam-----sungOcom", 
+        "name": "Kaja Mohaideen"
+    }, 
+    {
+        "email": "karthikg.g|sam-----sungOcom", 
+        "name": "Karthik Gopalan"
+    }, 
+    {
+        "email": "das.kulajit|sam-----sungOcom", 
+        "name": "Kulajit Das"
+    }, 
+    {
+        "email": "mallik.n|sam-----sungOcom", 
+        "name": "Mallikarjuna Narala"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2014": 7, 
+                "closed": [
+                    {
+                        "https://codereview.chromium.org/775013003": "Updating CustomScrollbar Geometry for IFRAME element."
+                    }, 
+                    {
+                        "https://codereview.chromium.org/761343002": "Setting custom scrollbar margin values to int."
+                    }, 
+                    {
+                        "https://codereview.chromium.org/760383004": "Reset theme-color on Page Load."
+                    }
+                ], 
+                "open": [], 
+                "total": 7
+            }, 
+            "chromium": {
+                "2014": 12, 
+                "closed": [
+                    {
+                        "https://codereview.chromium.org/307563004": "Glow Effect for Sublayers"
+                    }
+                ], 
+                "open": [], 
+                "total": 12
+            }
+        }, 
+        "email": "sataya.m|sam-----sungOcom", 
+        "name": "Munukutla Subrahmanya Praveen"
+    }, 
+    {
+        "email": "nikhil.sahni|sam-----sungOcom", 
+        "name": "Nikhil Sahni"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2013": 12, 
+                "2014": 7, 
+                "closed": [], 
+                "open": [], 
+                "total": 19
+            }, 
+            "chromium": {
+                "2013": 1, 
+                "closed": [], 
+                "open": [], 
+                "total": 1
+            }
+        }, 
+        "email": "pavan.e|sam-----sungOcom", 
+        "name": "Pavan Kumar Emani"
+    }, 
+    {
+        "email": "prabha.p|sam-----sungOcom", 
+        "name": "Prabhavathi Perumal"
+    }, 
+    {
+        "contributions": {
+            "chromium": {
+                "2013": 1, 
+                "2014": 6, 
+                "closed": [], 
+                "open": [], 
+                "total": 7
+            }
+        }, 
+        "email": "prashant.n|sam-----sungOcom", 
+        "name": "Prashant Nevase"
+    }, 
+    {
+        "contributions": {
+            "chromium": {
+                "2014": 5, 
+                "closed": [], 
+                "open": [], 
+                "total": 5
+            }
+        }, 
+        "email": "puttaraju.r|sam-----sungOcom", 
+        "name": "Putturaju R"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2013": 23, 
+                "2014": 2, 
+                "closed": [], 
+                "open": [], 
+                "total": 25
+            }, 
+            "chromium": {
+                "2013": 2, 
+                "2014": 10, 
+                "closed": [
+                    {
+                        "https://codereview.chromium.org/763413003": "Roll trace-viewer to e323952e58bcc288b754ca8453229f0c0a141622."
+                    }
+                ], 
+                "open": [
+                    {
+                        "https://codereview.chromium.org/772463005": "[Cleanup] Add single click trace link to chrome://inspect"
+                    }
+                ], 
+                "total": 12, 
+                "weekly": 1
+            }, 
+            "trace-viewer": {
+                "2014": 13, 
+                "closed": [], 
+                "open": [], 
+                "total": 13
+            }
+        }, 
+        "email": "r.kasibhatla|sam-----sungOcom", 
+        "name": "Ravi Kasibhatla", 
+        "username": "kphanee"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2014": 1, 
+                "closed": [], 
+                "open": [], 
+                "total": 1
+            }
+        }, 
+        "email": "shanmuga.m|sam-----sungOcom", 
+        "name": "Shanmuga Pandi"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2014": 4, 
+                "closed": [], 
+                "open": [], 
+                "total": 4
+            }, 
+            "chromium": {
+                "2013": 1, 
+                "2014": 28, 
+                "closed": [], 
+                "open": [], 
+                "total": 29
+            }
+        }, 
+        "email": "siva.gunturi|sam-----sungOcom", 
+        "name": "Siva Gunturi"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2014": 1, 
+                "closed": [], 
+                "open": [], 
+                "total": 1
+            }, 
+            "chromium": {
+                "2014": 27, 
+                "closed": [], 
+                "open": [
+                    {
+                        "https://codereview.chromium.org/635543002": "cc: Make ResourceProvider use bindless Produce/ConsumeTextureCHROMIUM"
+                    }, 
+                    {
+                        "https://codereview.chromium.org/679363004": "cc: Force activate pending tree when we cannot draw."
+                    }
+                ], 
+                "total": 27
+            }
+        }, 
+        "email": "sohan.jyoti|sam-----sungOcom", 
+        "name": "Sohan Jyoti Ghosh"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2013": 18, 
+                "2014": 3, 
+                "closed": [], 
+                "open": [], 
+                "total": 21
+            }, 
+            "chromium": {
+                "2013": 1, 
+                "closed": [], 
+                "open": [], 
+                "total": 1
+            }
+        }, 
+        "email": "a.suchit|sam-----sungOcom", 
+        "name": "Suchit Agarwal"
+    }, 
+    {
+        "contributions": {
+            "chromium": {
+                "2014": 1, 
+                "closed": [], 
+                "open": [], 
+                "total": 1
+            }
+        }, 
+        "email": "sujiths.s|sam-----sungOcom", 
+        "name": "Sujith S S"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2014": 6, 
+                "closed": [], 
+                "open": [], 
+                "total": 6
+            }, 
+            "chromium": {
+                "2014": 5, 
+                "closed": [], 
+                "open": [], 
+                "total": 5
+            }
+        }, 
+        "email": "suyash.s|sam-----sungOcom", 
+        "name": "Suyash Sengar"
+    }, 
+    {
+        "email": "tanvir.rizvi|sam-----sungOcom", 
+        "name": "Tanvir Rizvi"
+    }, 
+    {
+        "email": "thanik.k|sam-----sungOcom", 
+        "name": "Thanikassalam Kankayan"
+    }, 
+    {
+        "email": "vivek.s14|sam-----sungOcom", 
+        "name": "Vivek Agrawal"
+    }, 
+    {
+        "contributions": {
+            "blink": {
+                "2012": 5, 
+                "2013": 47, 
+                "2014": 42, 
+                "closed": [
+                    {
+                        "https://codereview.chromium.org/777633002": "Removing explicit include dir, bindings/core/v8, for the webcore_testing target"
+                    }, 
+                    {
+                        "https://codereview.chromium.org/780503003": "[DevTools] Resizing DevTools window should clear autocomplete text from console prompt."
+                    }, 
+                    {
+                        "https://codereview.chromium.org/773883003": "[DevTools] Console view should hide the suggestion box upon console clear (Ctrl/Cmd+L)."
+                    }, 
+                    {
+                        "https://codereview.chromium.org/757963002": "[Blink-in-JS] 'Import' function to load sub-modules and other resources for private scripts (Part-3)"
+                    }, 
+                    {
+                        "https://codereview.chromium.org/755883004": "[Blink-in-JS] 'Import' function to load sub-modules and other resources for private scripts (Part-1)"
+                    }
+                ], 
+                "open": [
+                    {
+                        "https://codereview.chromium.org/573553002": "Reland Move the user agent styles sheets to blink_resources.grd (Part 3)"
+                    }
+                ], 
+                "total": 94, 
+                "weekly": 5
+            }, 
+            "chromium": {
+                "2013": 7, 
+                "2014": 43, 
+                "closed": [
+                    {
+                        "https://codereview.chromium.org/759553002": "[Blink-in-JS] 'Import' function to load sub-modules and other resources for private scripts (Part-2)"
+                    }, 
+                    {
+                        "https://codereview.chromium.org/771063002": "Rename AppListMainViewTest::ContentsView to AppListMainViewTest::GetContentsView to fix build break"
+                    }
+                ], 
+                "open": [], 
+                "total": 50, 
+                "weekly": 2
+            }
+        }, 
+        "email": [
+            "vivek.vg|sam-----sungOcom"
+        ], 
+        "name": "Vivek Galatage"
+    }
+]
