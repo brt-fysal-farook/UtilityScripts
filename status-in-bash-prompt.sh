@@ -44,6 +44,9 @@ function show_status_bubble() {
 
             "fastbuild" )
                 status_bubble+=("fastbuild@$value");;
+            
+            * )
+                status_bubble+=("$key@$value");;
         esac
     done
     length=${#status_bubble[@]}
