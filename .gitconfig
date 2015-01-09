@@ -1,0 +1,13 @@
+[grep]
+	extendRegexp = true
+[alias]
+	g = grep --break --heading --line-number
+	wdiff = diff --color-words
+[user]
+	name = Vivek Galatage
+	email = vivek.vg@samsung.com
+[core]
+    excludesfile = /home/vivekg/.gitignore
+[color "diff"]
+    meta=yellow bold
+    frag=yellow bold
