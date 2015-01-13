@@ -10,8 +10,7 @@
     excludesfile = /home/vivekg/.gitignore
 [color "diff"]
     meta=black yellow
-    frag=black white
-    func=black white ul
-    new=white green bold
+    frag=white magenta
+    func=white magenta
 
 
