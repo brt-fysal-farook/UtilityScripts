@@ -5,28 +5,20 @@ import subprocess
 import sys
 
 class Repository(object):
-    class Type:
-        git = 1
-        svn = 1
-
-    def __init__(self, name, paths, type):
-        self._name = name
-        self._type = type
-        self._paths = paths
+    def __init__(self, args):
+        self._name = args.repository_name
+        self._paths = args.include_path
         self._files = []
-        self._includes = []
+        self._include_paths = []
+        self._exclude_paths = ['.git', '.svn']
+        if args.exclude_path != None:
+            self._exclude_paths = self._exclude_paths + [os.path.abspath(file_path) for file_path in args.exclude_path]
+
+        self._gather_files()
 
     @property
     def name(self):
         return self._name
-
-    @property
-    def type(self):
-        return self._type
-
-    @property
-    def paths(self):
-        return self._paths
 
     @property
     def files(self):
@@ -34,40 +26,33 @@ class Repository(object):
 
     @property
     def includes(self):
-        return self._includes
-
-    @staticmethod
-    def create(name, paths, type=None):
-        if type is None:
-            type = Repository.Type.git
-
-        if type is Repository.Type.git:
-            return GitRepository(name, paths, type)
-
-class GitRepository(Repository):
-    def __init__(self, name, paths, type):
-        Repository.__init__(self, name, paths, type)
-        self._gather_files()
+        return self._include_paths
 
     def _gather_files(self):
-        for path in self.paths:
+        for path in self._paths:
             os.chdir(path)
-            find_cmd = subprocess.Popen('find', stdout=subprocess.PIPE)
-            files = subprocess.check_output(['grep','-E', '(cc|cpp|mm|h|idl|gn|gni|gyp|gypi|py|java|js|json|grd|tmpl|S|y|sh|in)$'], stdin=find_cmd.stdout).splitlines()
-            files = [os.path.abspath(file_path) for file_path in files]
-            self._files = self._files + files
-            self._includes = self._includes + [x[0] for x in os.walk(path)]
+            found_files = subprocess.check_output(['find', os.getcwd()]).splitlines()
+            for file in found_files:
+                should_exclude_file = False
+                for exclude_path in self._exclude_paths:
+                    if exclude_path in file:
+                        should_exclude_file = True
+                        break
+                if should_exclude_file:
+                    continue
+                self._files.append(file)
+            self._include_paths = self._include_paths + [x[0] for x in os.walk(path)]
         self._files.sort()
-        self._includes.sort();
+        self._include_paths.sort();
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--repo', '-r', action='store', required=True, help='Repository name.')
-    parser.add_argument('--repo-paths', '-rp', action='append', required=True, help='Repository path(s).')
+    parser.add_argument('--repository-name', '-r', action='store', required=True, help='Repository name.')
+    parser.add_argument('--include-path', '-i', action='append', required=True, help='Repository path(s) to be included.')
+    parser.add_argument('--exclude-path', '-x', action='append', help='Repository path(s) to be excluded.')
     parser.add_argument('--output-dir', '-o', action='store', required=True, help='Output directory to store the generated QtCreator project files.')
-    parser.add_argument('--include-pattern', '-p', action='store', help='Regular expression consisting of the file inclusion pattern.')
     args = parser.parse_args()
-    repo = Repository.create(args.repo, args.repo_paths)
+    repo = Repository(args)
 
     file_prefix = os.path.abspath(args.output_dir + '/' + repo.name.upper())
     config_file = open(file_prefix + '.config', 'w');
